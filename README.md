@@ -68,10 +68,10 @@ These projects demonstrate the complete RTL-to-GDSII design flow using Cadence G
 
 Each project folder typically contains:
 
-- 📄 `*_Report.pdf`: Project report summarizing design steps and simulation results.
-- 🖼 `.png` images: Screenshots of schematic, layout, symbol, and simulation waveforms.
-- 📐 `.pdf` design briefs and project descriptions.
-- 🧪 Configuration views and ADE-L test setups (if exported).
+- `*_Report.pdf`: Project report summarizing design steps and simulation results.
+- `.png` images: Screenshots of schematic, layout, symbol, and simulation waveforms.
+- `.pdf` design briefs and project descriptions.
+- Configuration views and ADE-L test setups (if exported).
 
 ---
 
@@ -88,7 +88,6 @@ Each project folder typically contains:
 For any questions, feel free to reach out:
 
 **Rami Omer**  
-Email: [rami.ba.omer@gmail.com](mailto:rami.ba.omer@gmail.com)  
 GitHub: [@ramiomer94](https://github.com/ramiomer94)
 
 ---
