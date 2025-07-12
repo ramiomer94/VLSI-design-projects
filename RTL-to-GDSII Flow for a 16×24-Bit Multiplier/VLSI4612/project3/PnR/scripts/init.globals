@@ -1,0 +1,59 @@
+# Define paths for Verilog, LEF, MMMC, and other files
+set netlist_dir "../Synthesis/netlist"
+
+# Define LEF files (adjust paths to match your actual setup)
+set lef_files {
+    "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef"
+    "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef"
+}
+
+set layer_map_file "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/oa22/gsclib045/gsclib045.layermap"
+set gds_files "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/gds/gsclib045.gds"
+
+# Set Verilog and SDC files
+set verilog_file "$netlist_dir/genus_mult_unsigned.v"
+set sdc_file "$netlist_dir/genus_mult_unsigned.sdc"
+
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set _timing_save_restore_compression_mode hybrid
+set conf_qxconf_file {NULL}
+set conf_qxlib_file {NULL}
+set defHierChar {/}
+set distributed_client_message_echo {1}
+set distributed_mmmc_disable_reports_auto_redirection {0}
+set gpsPrivate::dpgNewAddBufsDBUpdate 1
+set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+
+# Perform initialization using init_* commands
+# Initialize the LEF files
+set init_lef_file {
+    "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_tech.lef"
+    "/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/lef/gsclib045_macro.lef"
+}
+
+# Initialize the Verilog file
+set init_verilog "$netlist_dir/genus_mult_unsigned.v"
+
+set init_top_cell mult_unsigned
+#init_remove_assigns true
+
+# Set IO file 
+#set init_io_file {/eecs/research/biomed/namavar/cadence/tsmc180/vlsi/pnr/scripts/pinAssignment2.io}
+
+# Set the MMMC view file
+set init_mmmc_file {./scripts/mmmc.view}
+
+# Define power and ground net names
+set init_pwr_net {VDD}
+set init_gnd_net {VSS}
+
+# Ensure other initialization-related settings match your design requirements
+set latch_time_borrow_mode max_borrow
+set lsgOCPGainMult 1.000000
+set pegDefaultResScaleFactor 1.000000
+set pegDetailResScaleFactor 1.000000
+set report_inactive_arcs_format {from to when arc_type sense reason}
+set timing_library_float_precision_tol 0.000010
+set timing_library_load_pin_cap_indices {}
+set timing_library_write_library_to_directory {}
+set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}

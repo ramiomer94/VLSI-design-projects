@@ -1,0 +1,1 @@
+s1(10Mar2025:20:15:36):  xrun -64bit -v93 -relax -access +rwc -compile -f filelist.f -logfile .//results/compile.log 

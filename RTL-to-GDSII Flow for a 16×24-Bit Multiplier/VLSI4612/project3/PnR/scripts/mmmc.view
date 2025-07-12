@@ -1,0 +1,44 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+
+set netlist_dir "../Synthesis/netlist"
+
+#===============================================================
+# RC Corner Definitions
+#===============================================================
+create_rc_corner -name rc_best -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} \
+    -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
+
+create_rc_corner -name rc_worst -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} \
+    -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0}
+
+#===============================================================
+# Library Set Definitions
+#===============================================================
+
+create_library_set -name min_timing -timing {\
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib \
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/fast_vdd1v0_basicCells.lib}
+create_library_set -name max_timing -timing {\
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib \
+/CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v2_basicCells.lib}
+
+#===============================================================
+# Constraint Mode Definition
+#===============================================================
+create_constraint_mode -name constraints -sdc_files "$netlist_dir/genus_mult_unsigned.sdc"
+
+#===============================================================
+# Delay Corner Definitions
+#===============================================================
+create_delay_corner -name min_delay -library_set {min_timing} -rc_corner {rc_worst}
+create_delay_corner -name max_delay -library_set {max_timing} -rc_corner {rc_best}
+
+#===============================================================
+# Analysis View Definitions
+#===============================================================
+create_analysis_view -name best_case -constraint_mode {constraints} -delay_corner {min_delay}
+create_analysis_view -name worst_case -constraint_mode {constraints} -delay_corner {max_delay}
+
+# Set the main analysis views for setup and hold
+set_analysis_view -setup {worst_case} -hold {best_case}

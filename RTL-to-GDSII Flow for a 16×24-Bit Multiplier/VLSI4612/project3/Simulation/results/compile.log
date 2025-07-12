@@ -1,0 +1,19 @@
+xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s006: Started on Mar 10, 2025 at 20:15:35 EDT
+xrun
+	-64bit
+	-v93
+	-relax
+	-access +rwc
+	-compile
+	-f filelist.f
+		../RTL/src/mult_unsigned.v
+		../RTL/tb/mult_unsigned_tb.v
+	-logfile .//results/compile.log
+file: ../RTL/src/mult_unsigned.v
+	module worklib.mult_unsigned:v
+		errors: 0, warnings: 0
+file: ../RTL/tb/mult_unsigned_tb.v
+	module worklib.mult_unsigned_tb:v
+		errors: 0, warnings: 0
+TOOL:	xrun(64)	23.09-s006: Exiting on Mar 10, 2025 at 20:15:36 EDT  (total: 00:00:01)

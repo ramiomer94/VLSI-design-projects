@@ -1,0 +1,3 @@
+# Soft include definitions for each Xcelium option
+INCLUDE /CMC/tools/cadence/XCELIUMMAIN23.09.006_lnx86/tools.lnx86/inca/files/cds.lib
+

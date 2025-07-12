@@ -1,0 +1,6 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(10Mar2025:20:15:36):( xrun -64bit -v93 -relax -access +rwc -compile -f filelist.f -logfile .//results/compile.log )
+s2::(10Mar2025:20:15:36):( xrun -64bit -v93 -relax -access +rwc -elaborate -top mult_unsigned_tb -cdslib cds.lib -logfile .//results/elaborate.log )

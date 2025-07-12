@@ -1,0 +1,87 @@
+# GDS Map File
+# Written by: Mohsen Namavar@York University	
+# Date: Feb 26, 2025
+# Description: This file defines the mapping of layers for GDSII format in Cadence GPDK 45nm.
+
+
+# Layer/ Object Name  Layer/ Object Type  Layer Number  Datatype
+# <t_ layerObjectName> <t_ objectType> <n_ layerNum> <n_ datatype>
+
+Poly            NET                             3       0
+Cont            VIA                             6       0
+
+Metal1          NET, SPNET, VIA                 7       0
+Metal2          NET, SPNET, VIA                 9       0
+Metal3          NET, SPNET, VIA                 11      0
+Metal4          NET, SPNET, VIA                 31      0  
+Metal5          NET, SPNET, VIA                 33      0  
+Metal6          NET, SPNET, VIA                 35      0  
+Metal7          NET, SPNET, VIA                 38      0  
+Metal8          NET, SPNET, VIA                 40      0 
+Metal9          NET, SPNET, VIA                 42      0  
+Metal10         NET, SPNET, VIA                 152     0  
+Metal11         NET, SPNET, VIA                 162     0  
+
+Via1            VIA                             8       0
+Via2            VIA                             10      0
+Via3            VIA                             30      0 
+Via4            VIA                             32      0  
+Via5            VIA                             34      0  
+Via6            VIA                             37      0  
+Via7            VIA                             39      0  
+Via8            VIA                             41      0 
+Via9            VIA                             151     0  
+Via10           VIA                             161     0  
+
+Metal1          PIN                             7       1 
+Metal2          PIN                             9       1 
+Metal3          PIN                             11      1 
+Metal4          PIN                             31      1  
+Metal5          PIN                             33      1  
+Metal6          PIN                             35      1  
+Metal7          PIN                             38      1  
+Metal8          PIN                             40      1  
+Metal9          PIN                             42      1  
+Metal10         PIN                             152     1  
+Metal11         PIN                             162     1  
+
+
+Metal1          FILL                            7       5 
+Metal2          FILL                            9       5 
+Metal3          FILL                            11      5 
+Metal4          FILL                            31      5  
+Metal5          FILL                            33      5  
+Metal6          FILL                            35      5  
+Metal7          FILL                            38      5  
+Metal8          FILL                            40      5  
+Metal9          FILL                            42      5  
+Metal10         FILL                            152     5  
+Metal11         FILL                            162     5  
+
+
+Via1            VIAFILL                         8       1
+Via2            VIAFILL                         10      1
+Via3            VIAFILL                         30      1 
+Via4            VIAFILL                         32      1  
+Via5            VIAFILL                         34      1  
+Via6            VIAFILL                         37      1  
+Via7            VIAFILL                         39      1  
+Via8            VIAFILL                         41      1  
+Via9            VIAFILL                         151     1  
+Via10           VIAFILL                         161     1  
+
+DIEAREA         ALL                             62      0
+COMP            ALL                             59      0
+NAME            COMP                            59      0
+
+NAME            Metal1/PIN                      7       1 
+NAME            Metal2/PIN                      9       1 
+NAME            Metal3/PIN                      11      1 
+NAME            Metal4/PIN                      31      1  
+NAME            Metal5/PIN                      33      1  
+NAME            Metal6/PIN                      35      1  
+NAME            Metal7/PIN                      38      1  
+NAME            Metal8/PIN                      40      1  
+NAME            Metal9/PIN                      42      1  
+NAME            Metal10/PIN                     152     1  
+NAME            Metal11/PIN                     162     1  

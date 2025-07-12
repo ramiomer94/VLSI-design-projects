@@ -1,0 +1,37 @@
+xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s006: Started on Mar 10, 2025 at 20:15:36 EDT
+xrun
+	-64bit
+	-v93
+	-relax
+	-access +rwc
+	-elaborate
+	-top mult_unsigned_tb
+	-cdslib cds.lib
+	-logfile .//results/elaborate.log
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		mult_unsigned_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mult_unsigned:v <0x093f317c>
+			streams:   4, words:  2554
+		worklib.mult_unsigned_tb:v <0x4378694f>
+			streams:   5, words: 19378
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               7       7
+		Scalar wires:            1       -
+		Vectored wires:          3       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Cont. assignments:       1       1
+		Pseudo assignments:      3       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.mult_unsigned_tb:v
+TOOL:	xrun(64)	23.09-s006: Exiting on Mar 10, 2025 at 20:15:37 EDT  (total: 00:00:01)

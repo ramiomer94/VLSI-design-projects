@@ -1,0 +1,21 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-V93
+-RELAX
+-ACCESS
++rwc
+-no_analogsolver
+-MESSAGES
+mult_unsigned_tb
+-XLMODE
+./xcelium.d/run.lnx8664.23.09.d
+-RUNMODE
+-CDSLIB
+./xcelium.d/run.lnx8664.23.09.d/cds.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.23.09.d/hdl.var
+-WORK
+worklib
+-IRUNHASTOP

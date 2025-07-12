@@ -1,0 +1,54 @@
+xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s006: Started on Mar 10, 2025 at 20:15:37 EDT
+xrun
+	-64bit
+	-v93
+	-relax
+	-access +rwc
+	-R
+	-cdslib cds.lib
+	-logfile .//results/simulate.log
+	-input ./scripts/run.tcl
+	-gui
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> # scripts/run.tcl
+xcelium> 
+xcelium> # Where to store waveforms
+xcelium> set SIM_RESULTS_DIR ./results
+./results
+xcelium> 
+xcelium> # Make sure the directory exists
+xcelium> if {![file isdirectory $SIM_RESULTS_DIR]} {
+>     file mkdir $SIM_RESULTS_DIR
+> }
+xcelium> 
+xcelium> # Open waveform database
+xcelium> database -open $SIM_RESULTS_DIR/waves -default
+Created default SHM database ./results/waves
+xcelium> 
+xcelium> # Probe signals recursively from the top-level instance
+xcelium> probe -create -all -depth all
+Created probe 1
+xcelium> 
+xcelium> # Run the simulation for 100 ns
+xcelium> run 500 ns
+Test Case 1: A=0, B=0
+Test Case 1: passed
+Test Case 2: A=10, B=5
+Test Case 2: passed
+Test Case 3: A=255, B=127
+Test Case 3: passed
+Test Case 4: A=max, B=max
+ERROR: Test case 4 failed. RES = 1111111111111110111111110000000000000001, Expected = 000000000000000100000000000000000000000
+Simulation complete via $finish(1) at time 205 NS + 0
+../RTL/tb/mult_unsigned_tb.v:80           $finish;
+xcelium> 
+xcelium> # Close the waveform database (explicitly specify the database name)
+xcelium> database -close $SIM_RESULTS_DIR/waves
+xcelium> 
+xcelium> # Exit the simulation
+xcelium> exit
+TOOL:	xrun(64)	23.09-s006: Exiting on Mar 10, 2025 at 20:45:55 EDT  (total: 00:30:18)
