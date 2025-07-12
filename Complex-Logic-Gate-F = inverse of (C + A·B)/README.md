@@ -59,7 +59,7 @@ Designed and verified using Cadence Virtuoso and ADE L for EECS4612 - Digital VL
 
 ---
 
-## 👤 Author
+## Author
 
 **Rami Omer**  
 EECS4612 - Winter 2025  
